@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd web && pnpm install && pnpm build",
+  "outputDirectory": "web/.svelte-kit/adapter-auto",
+  "installCommand": "cd web && pnpm install",
+  "framework": "sveltekit",
+  "rootDirectory": "web"
+}
