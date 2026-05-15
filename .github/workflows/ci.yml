@@ -18,6 +18,10 @@ jobs:
     permissions:
       contents: read
 
+    defaults:
+      run:
+        working-directory: ./web
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -32,6 +36,7 @@ jobs:
         with:
           node-version: 22
           cache: 'pnpm'
+          cache-dependency-path: web/pnpm-lock.yaml
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
