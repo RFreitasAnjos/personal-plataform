@@ -59,18 +59,18 @@
 			class="animate-fade-in-up mb-12 flex flex-wrap items-center justify-center gap-8 delay-300"
 		>
 			<div class="flex flex-col items-center">
-				<span class="text-3xl font-bold text-white">+200</span>
-				<span class="mt-1 text-xs tracking-widest text-zinc-500 uppercase">Alunos</span>
+				<span class="text-3xl font-bold text-white">+100</span>
+				<span class="mt-1 text-xs tracking-widest text-zinc-500 uppercase">Alunos espalhados pelos</span><span class="text-gradient-brazil">Brasil</span>
 			</div>
 			<div class="hidden h-10 w-px bg-zinc-800 sm:block"></div>
 			<div class="flex flex-col items-center">
-				<span class="text-3xl font-bold text-white">5+</span>
+				<span class="text-3xl font-bold text-white">3+</span>
 				<span class="mt-1 text-xs tracking-widest text-zinc-500 uppercase">Anos de experiência</span
 				>
 			</div>
 			<div class="hidden h-10 w-px bg-zinc-800 sm:block"></div>
 			<div class="flex flex-col items-center">
-				<span class="text-3xl font-bold text-white">98%</span>
+				<span class="text-3xl font-bold text-white">100%</span>
 				<span class="mt-1 text-xs tracking-widest text-zinc-500 uppercase">Satisfação</span>
 			</div>
 		</div>

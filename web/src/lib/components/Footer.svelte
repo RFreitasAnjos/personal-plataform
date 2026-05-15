@@ -92,12 +92,19 @@
 
 		<!-- Bottom bar -->
 		<div
-			class="flex flex-col items-center justify-between gap-3 border-t border-zinc-900 pt-6 sm:flex-row"
+			class="flex flex-col items-center justify-around gap-3 border-t border-zinc-900 pt-6 text-center sm:flex-row sm:justify-between sm:text-left"
 		>
 			<p class="text-xs text-zinc-600">
-				© {currentYear} Gui Freitas Personal Trainer. Todos os direitos reservados.
+				&copy; {currentYear} Gui Freitas Personal Trainer. Todos os direitos reservados.
 			</p>
-			<p class="text-xs text-zinc-700">Feito com dedicação para transformar vidas.</p>
+			<a
+				href="https://rfreitasanjos.github.io/meu-portifolio/"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="text-xs text-zinc-600 transition-colors hover:text-zinc-400"
+			>
+				Feito com dedicação por <span class="text-red-500">Renan Freitas</span> para transformar vidas.
+			</a>
 		</div>
 	</div>
 </footer>

@@ -44,8 +44,8 @@
 					Um parceiro de evolução.
 				</h2>
 				<p class="mb-6 text-lg leading-relaxed text-zinc-400">
-					Com mais de 5 anos de experiência e centenas de alunos transformados, Gui Freitas acredita
-					que resultado real vem de um acompanhamento próximo, metodologia séria e muito
+					Com mais de 3 anos de experiência e centenas de alunos transformados, acredito que a verdadeira mudança 
+					que resulta em resultados reais vem de um acompanhamento próximo, metodologia séria e muito
 					comprometimento.
 				</p>
 				<p class="mb-8 text-lg leading-relaxed text-zinc-400">
