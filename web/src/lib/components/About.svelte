@@ -61,7 +61,7 @@
 
 			<!-- Cards grid -->
 			<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-				{#each cards as card, i}
+				{#each cards as card, i (i)}
 					<div
 						class="glass group rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-red-900/40"
 						style="animation-delay: {i * 100}ms"

@@ -1,32 +1,7 @@
 <script lang="ts">
 	import { Star, Quote } from 'lucide-svelte';
 
-	const testimonials = [
-		{
-			name: 'Carlos Mendes',
-			role: 'Aluno há 8 meses',
-			initials: 'CM',
-			color: 'from-red-700 to-red-900',
-			text: 'Em poucos meses consegui resultados que nunca tinha alcançado antes. O acompanhamento do Gui fez toda diferença.',
-			stars: 5
-		},
-		{
-			name: 'Fernanda Lima',
-			role: 'Aluna há 1 ano',
-			initials: 'FL',
-			color: 'from-rose-700 to-rose-900',
-			text: 'Treinos organizados, suporte excelente e uma motivação absurda. Recomendo demais.',
-			stars: 5
-		},
-		{
-			name: 'Lucas Andrade',
-			role: 'Aluno há 6 meses',
-			initials: 'LA',
-			color: 'from-orange-700 to-red-900',
-			text: 'Além da evolução física, minha rotina mudou completamente. Hoje tenho muito mais disposição.',
-			stars: 5
-		}
-	];
+	import { testimonials } from '$lib/mocks/Testimonials';
 </script>
 
 <section id="depoimentos" class="relative overflow-hidden py-16 sm:py-20 md:py-28">
@@ -52,7 +27,7 @@
 
 		<!-- Cards -->
 		<div class="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
-			{#each testimonials as t, i}
+			{#each testimonials as t (t.name)}
 				<div
 					class="glass-dark group flex flex-col gap-5 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:border-red-900/30"
 				>
@@ -63,7 +38,7 @@
 
 					<!-- Stars -->
 					<div class="flex gap-1">
-						{#each Array(t.stars) as _}
+						{#each Array(t.stars) as _, i (i)}
 							<Star size={14} class="fill-yellow-400 text-yellow-400" />
 						{/each}
 					</div>

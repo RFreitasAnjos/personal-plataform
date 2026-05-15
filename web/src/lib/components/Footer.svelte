@@ -30,7 +30,7 @@
 			<div>
 				<p class="mb-4 text-xs font-semibold tracking-widest text-zinc-400 uppercase">Navegação</p>
 				<ul class="flex flex-col gap-2">
-					{#each links as link}
+					{#each links as link (link.href)}
 						<li>
 							<a
 								href={link.href}

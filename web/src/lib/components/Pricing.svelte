@@ -1,58 +1,6 @@
 <script lang="ts">
-	import { Check, MessageCircle, Zap, Crown } from 'lucide-svelte';
-
-	const plans = [
-		{
-			icon: Zap,
-			name: 'Consultoria Online',
-			price: 'R$ 149.90',
-			period: '/mês',
-			desc: 'Para quem quer treinar em qualquer lugar com orientação profissional.',
-			featured: false,
-			cta: 'Começar agora',
-			perks: [
-				'Planilha de treino personalizada',
-				'Suporte via WhatsApp (dias úteis)',
-				'Ajuste mensal de treino',
-				'Acesso a vídeos explicativos',
-				'Avaliação física mensal'
-			]
-		},
-		{
-			icon: Crown,
-			name: 'Plano Premium',
-			price: 'R$ 299.90',
-			period: '/mês',
-			desc: 'Máxima evolução com suporte completo, presencial ou online.',
-			featured: true,
-			cta: 'Quero o Premium',
-			perks: [
-				'Acompanhamento presencial',
-				'Treino 100% personalizado',
-				'Suporte WhatsApp 7 dias/semana',
-				'Avaliação física mensal',
-				'Orientação nutricional com nutricionista profissional',
-				'Vídeo-aula semanal ao vivo',
-				'Acesso a comunidade exclusiva'
-			]
-		},
-		{
-			icon: MessageCircle,
-			name: 'Personal Presencial',
-			price: 'R$ 199.90',
-			period: '/mês',
-			desc: 'Acompanhamento presencial na sua academia com atenção individual.',
-			featured: false,
-			cta: 'Falar com Gui',
-			perks: [
-				'Aulas presenciais 3x por semana',
-				'Treino personalizado',
-				'Correção postural e execução',
-				'Suporte via WhatsApp',
-				'Avaliação física bimestral'
-			]
-		}
-	];
+	import { plans } from '$lib/mocks/pricing';
+	import { Check, MessageCircle } from 'lucide-svelte';
 </script>
 
 <section id="planos" class="relative overflow-hidden py-16 sm:py-20 md:py-28">
@@ -78,7 +26,7 @@
 
 		<!-- Cards -->
 		<div class="grid grid-cols-1 gap-6 md:grid-cols-3 md:items-center">
-			{#each plans as plan}
+			{#each plans as plan (plan.name)}
 				<div
 					class="relative flex flex-col gap-5 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-2
 					{plan.featured
@@ -118,7 +66,7 @@
 
 					<!-- Perks -->
 					<ul class="flex flex-col gap-3">
-						{#each plan.perks as perk}
+						{#each plan.perks as perk (perk)}
 							<li class="flex items-start gap-2.5 text-sm text-zinc-300">
 								<Check size={15} class="mt-0.5 shrink-0 text-red-500" />
 								{perk}
