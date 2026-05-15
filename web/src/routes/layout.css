@@ -109,6 +109,20 @@ body {
 	background-clip: text;
 }
 
+.text-gradient-brazil {
+	background: linear-gradient(135deg, #009c3b 0%, #ffdf00 60%, #002776 90%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.text-gradient-instagram {
+	background: linear-gradient(135deg, #f09433 0%, #e6683c 15%, #dc2743 35%, #cc2366 65%, #bc1888 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
 .btn-brand {
 	background: linear-gradient(135deg, #c0392b, #e74c3c);
 	color: #fff;
