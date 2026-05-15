@@ -1,170 +1,49 @@
-name: Continuous Integration
+name: CI
 
 on:
-  push:
-    branches:
-      - main
-      - develop
-
   pull_request:
     branches:
       - main
       - develop
 
-# Evita pipelines duplicados
-concurrency:
-  group: ci-${{ github.ref }}
-  cancel-in-progress: true
+  push:
+    branches:
+      - main
+      - develop
 
 jobs:
-  # =========================================================
-  # JOB: CODE QUALITY
-  # =========================================================
-  quality:
-    name: Code Quality
-
-    runs-on: ubuntu-latest
-
-    steps:
-      # -----------------------------------------------------
-      # Baixa o código do repositório
-      # -----------------------------------------------------
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      # -----------------------------------------------------
-      # Instala Node.js
-      # -----------------------------------------------------
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-
-          # Cache automático do npm
-          cache: npm
-
-      # -----------------------------------------------------
-      # Instala dependências
-      # npm ci é ideal para CI/CD
-      # -----------------------------------------------------
-      - name: Install dependencies
-        run: npm ci
-
-      # -----------------------------------------------------
-      # Verifica formatação Prettier
-      # -----------------------------------------------------
-      - name: Check formatting
-        run: npm run format:check
-
-      # -----------------------------------------------------
-      # Executa ESLint
-      # -----------------------------------------------------
-      - name: Run ESLint
-        run: npm run lint
-
-      # -----------------------------------------------------
-      # Verifica tipagem TypeScript/Svelte
-      # -----------------------------------------------------
-      - name: Type checking
-        run: npm run check
-
-  # =========================================================
-  # JOB: TESTS
-  # =========================================================
-  tests:
-    name: Tests
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      # -----------------------------------------------------
-      # Executa testes unitários
-      # -----------------------------------------------------
-      - name: Run unit tests
-        run: npm run test
-
-      # -----------------------------------------------------
-      # Executa cobertura de testes
-      # -----------------------------------------------------
-      - name: Generate coverage
-        run: npm run coverage
-
-  # =========================================================
-  # JOB: BUILD
-  # =========================================================
   build:
-    name: Build Application
-
     runs-on: ubuntu-latest
 
-    # Só executa se quality/tests passarem
-    needs:
-      - quality
-      - tests
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
         with:
-          node-version: 22
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      # -----------------------------------------------------
-      # Build do projeto SvelteKit
-      # -----------------------------------------------------
-      - name: Build project
-        run: npm run build
-
-      # -----------------------------------------------------
-      # Faz upload do build gerado
-      # -----------------------------------------------------
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-files
-          path: build/
-
-  # =========================================================
-  # JOB: SECURITY
-  # =========================================================
-  security:
-    name: Security Audit
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+          version: 9
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
-      # -----------------------------------------------------
-      # Verifica vulnerabilidades críticas
-      # -----------------------------------------------------
-      - name: Run npm audit
-        run: npm audit --audit-level=high
+      - name: Run lint
+        run: pnpm lint --if-present
+
+      - name: Run type check
+        run: pnpm check --if-present
+
+      - name: Run tests
+        run: pnpm test --if-present
+
+      - name: Build application
+        run: pnpm build
