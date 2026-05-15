@@ -12,7 +12,7 @@
 	<title>Gui Freitas | Personal Trainer</title>
 </svelte:head>
 
-<main class="min-h-screen bg-zinc-950 text-white overflow-x-hidden">
+<main class="min-h-screen overflow-x-hidden bg-zinc-950 text-white">
 	<Hero />
 	<About />
 	<Benefits />

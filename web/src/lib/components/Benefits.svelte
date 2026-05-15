@@ -41,38 +41,46 @@
 	];
 </script>
 
-<section id="beneficios" class="relative py-16 sm:py-20 md:py-28 overflow-hidden">
+<section id="beneficios" class="relative overflow-hidden py-16 sm:py-20 md:py-28">
 	<div class="absolute inset-0 bg-zinc-900/40"></div>
-	<div class="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_100%_50%,rgba(192,57,43,0.07),transparent)]"></div>
+	<div
+		class="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_100%_50%,rgba(192,57,43,0.07),transparent)]"
+	></div>
 
-	<div class="relative z-10 container mx-auto px-6 max-w-6xl">
+	<div class="relative z-10 container mx-auto max-w-6xl px-6">
 		<!-- Header -->
-		<div class="text-center mb-16">
-			<span class="inline-block text-red-500 text-sm font-semibold uppercase tracking-widest mb-4">Por que escolher Gui Freitas</span>
-			<h2 class="section-title text-4xl sm:text-5xl text-white mb-4">
+		<div class="mb-16 text-center">
+			<span class="mb-4 inline-block text-sm font-semibold tracking-widest text-red-500 uppercase"
+				>Por que escolher Gui Freitas</span
+			>
+			<h2 class="section-title mb-4 text-4xl text-white sm:text-5xl">
 				Benefícios que você<br />
 				<span class="text-gradient">realmente vai sentir.</span>
 			</h2>
-			<p class="text-zinc-400 text-lg max-w-xl mx-auto">
+			<p class="mx-auto max-w-xl text-lg text-zinc-400">
 				Cada detalhe do seu treino é pensado para gerar resultados reais e duradouros.
 			</p>
 		</div>
 
 		<!-- Benefits grid -->
-		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+		<div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
 			{#each benefits as benefit, i}
 				<div
-					class="group relative rounded-2xl p-6 border border-zinc-800/60 bg-linear-to-br {benefit.color} hover:border-red-900/40 hover:-translate-y-1 transition-all duration-300 cursor-default overflow-hidden"
+					class="group relative rounded-2xl border border-zinc-800/60 bg-linear-to-br p-6 {benefit.color} cursor-default overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-red-900/40"
 				>
 					<!-- Hover glow -->
-					<div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_80%_80%_at_50%_0%,rgba(192,57,43,0.08),transparent)]"></div>
+					<div
+						class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_0%,rgba(192,57,43,0.08),transparent)] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+					></div>
 
 					<div class="relative z-10">
-						<div class="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-zinc-900/80 border border-zinc-700/50 mb-4 group-hover:border-red-900/50 transition-colors duration-300">
+						<div
+							class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-zinc-700/50 bg-zinc-900/80 transition-colors duration-300 group-hover:border-red-900/50"
+						>
 							<benefit.icon size={20} class="text-red-400" />
 						</div>
-						<h3 class="text-white font-semibold text-base mb-2">{benefit.title}</h3>
-						<p class="text-zinc-500 text-sm leading-relaxed">{benefit.desc}</p>
+						<h3 class="mb-2 text-base font-semibold text-white">{benefit.title}</h3>
+						<p class="text-sm leading-relaxed text-zinc-500">{benefit.desc}</p>
 					</div>
 				</div>
 			{/each}

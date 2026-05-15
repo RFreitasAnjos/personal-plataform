@@ -29,29 +29,35 @@
 	];
 </script>
 
-<section id="depoimentos" class="relative py-16 sm:py-20 md:py-28 overflow-hidden">
+<section id="depoimentos" class="relative overflow-hidden py-16 sm:py-20 md:py-28">
 	<div class="absolute inset-0 bg-zinc-950"></div>
-	<div class="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_100%,rgba(192,57,43,0.10),transparent)]"></div>
+	<div
+		class="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_100%,rgba(192,57,43,0.10),transparent)]"
+	></div>
 
-	<div class="relative z-10 container mx-auto px-6 max-w-6xl">
+	<div class="relative z-10 container mx-auto max-w-6xl px-6">
 		<!-- Header -->
-		<div class="text-center mb-16">
-			<span class="inline-block text-red-500 text-sm font-semibold uppercase tracking-widest mb-4">Depoimentos</span>
-			<h2 class="section-title text-4xl sm:text-5xl text-white mb-4">
+		<div class="mb-16 text-center">
+			<span class="mb-4 inline-block text-sm font-semibold tracking-widest text-red-500 uppercase"
+				>Depoimentos</span
+			>
+			<h2 class="section-title mb-4 text-4xl text-white sm:text-5xl">
 				O que dizem<br />
 				<span class="text-gradient">nossos alunos.</span>
 			</h2>
-			<p class="text-zinc-400 text-lg max-w-xl mx-auto">
+			<p class="mx-auto max-w-xl text-lg text-zinc-400">
 				Resultados reais de quem confiou no método e se comprometeu com a transformação.
 			</p>
 		</div>
 
 		<!-- Cards -->
-		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+		<div class="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
 			{#each testimonials as t, i}
-				<div class="glass-dark rounded-2xl p-7 flex flex-col gap-5 hover:border-red-900/30 transition-all duration-300 hover:-translate-y-1 group">
+				<div
+					class="glass-dark group flex flex-col gap-5 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:border-red-900/30"
+				>
 					<!-- Quote icon -->
-					<div class="text-red-900/60 group-hover:text-red-800/80 transition-colors">
+					<div class="text-red-900/60 transition-colors group-hover:text-red-800/80">
 						<Quote size={32} />
 					</div>
 
@@ -63,16 +69,18 @@
 					</div>
 
 					<!-- Text -->
-					<p class="text-zinc-300 text-base leading-relaxed flex-1">"{t.text}"</p>
+					<p class="flex-1 text-base leading-relaxed text-zinc-300">"{t.text}"</p>
 
 					<!-- Author -->
-					<div class="flex items-center gap-3 pt-2 border-t border-zinc-800/60">
-						<div class="w-10 h-10 rounded-full bg-linear-to-br {t.color} flex items-center justify-center text-white text-sm font-bold shrink-0">
+					<div class="flex items-center gap-3 border-t border-zinc-800/60 pt-2">
+						<div
+							class="h-10 w-10 rounded-full bg-linear-to-br {t.color} flex shrink-0 items-center justify-center text-sm font-bold text-white"
+						>
 							{t.initials}
 						</div>
 						<div>
-							<p class="text-white font-semibold text-sm">{t.name}</p>
-							<p class="text-zinc-500 text-xs">{t.role}</p>
+							<p class="text-sm font-semibold text-white">{t.name}</p>
+							<p class="text-xs text-zinc-500">{t.role}</p>
 						</div>
 					</div>
 				</div>

@@ -2,11 +2,15 @@
 	import { Dumbbell, ArrowRight, MessageCircle, Trophy, Flame, ChevronDown } from 'lucide-svelte';
 </script>
 
-<section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+<section class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden">
 	<!-- Background gradient layers -->
 	<div class="absolute inset-0 bg-zinc-950"></div>
-	<div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(192,57,43,0.18),transparent)]"></div>
-	<div class="absolute inset-0 bg-[radial-gradient(ellipse_40%_40%_at_80%_60%,rgba(192,57,43,0.08),transparent)]"></div>
+	<div
+		class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(192,57,43,0.18),transparent)]"
+	></div>
+	<div
+		class="absolute inset-0 bg-[radial-gradient(ellipse_40%_40%_at_80%_60%,rgba(192,57,43,0.08),transparent)]"
+	></div>
 
 	<!-- Grid pattern overlay -->
 	<div
@@ -15,20 +19,28 @@
 	></div>
 
 	<!-- Decorative blobs -->
-	<div class="absolute top-20 left-1/4 w-96 h-96 bg-red-800/10 rounded-full blur-3xl pointer-events-none"></div>
-	<div class="absolute bottom-20 right-1/4 w-80 h-80 bg-red-700/8 rounded-full blur-3xl pointer-events-none"></div>
+	<div
+		class="pointer-events-none absolute top-20 left-1/4 h-96 w-96 rounded-full bg-red-800/10 blur-3xl"
+	></div>
+	<div
+		class="pointer-events-none absolute right-1/4 bottom-20 h-80 w-80 rounded-full bg-red-700/8 blur-3xl"
+	></div>
 
 	<!-- Content -->
-	<div class="relative z-10 container mx-auto px-4 sm:px-6 max-w-6xl text-center">
+	<div class="relative z-10 container mx-auto max-w-6xl px-4 text-center sm:px-6">
 		<!-- Badge -->
-		<div class="animate-fade-in inline-flex items-center gap-2 glass rounded-full px-4 py-2 text-sm text-zinc-300 mb-8 border border-red-900/30">
+		<div
+			class="animate-fade-in glass mb-8 inline-flex items-center gap-2 rounded-full border border-red-900/30 px-4 py-2 text-sm text-zinc-300"
+		>
 			<Flame size={14} class="text-red-500" />
 			<span>Personal Trainer Certificado</span>
 			<Trophy size={14} class="text-red-500" />
 		</div>
 
 		<!-- Headline -->
-		<h1 class="animate-fade-in-up delay-100 section-title text-[clamp(1.65rem,7vw,6rem)] leading-tight text-white mb-6">
+		<h1
+			class="animate-fade-in-up section-title mb-6 text-[clamp(1.65rem,7vw,6rem)] leading-tight text-white delay-100"
+		>
 			Transforme seu<br />
 			<span class="text-gradient">corpo</span> com<br />
 			acompanhamento<br />
@@ -36,40 +48,47 @@
 		</h1>
 
 		<!-- Subheadline -->
-		<p class="animate-fade-in-up delay-200 text-lg sm:text-xl md:text-2xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+		<p
+			class="animate-fade-in-up mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-zinc-400 delay-200 sm:text-xl md:text-2xl"
+		>
 			Treinos personalizados, acompanhamento individual e foco total na sua evolução.
 		</p>
 
 		<!-- Stats bar -->
-		<div class="animate-fade-in-up delay-300 flex flex-wrap items-center justify-center gap-8 mb-12">
+		<div
+			class="animate-fade-in-up mb-12 flex flex-wrap items-center justify-center gap-8 delay-300"
+		>
 			<div class="flex flex-col items-center">
 				<span class="text-3xl font-bold text-white">+200</span>
-				<span class="text-xs text-zinc-500 uppercase tracking-widest mt-1">Alunos</span>
+				<span class="mt-1 text-xs tracking-widest text-zinc-500 uppercase">Alunos</span>
 			</div>
-			<div class="w-px h-10 bg-zinc-800 hidden sm:block"></div>
+			<div class="hidden h-10 w-px bg-zinc-800 sm:block"></div>
 			<div class="flex flex-col items-center">
 				<span class="text-3xl font-bold text-white">5+</span>
-				<span class="text-xs text-zinc-500 uppercase tracking-widest mt-1">Anos de experiência</span>
+				<span class="mt-1 text-xs tracking-widest text-zinc-500 uppercase">Anos de experiência</span
+				>
 			</div>
-			<div class="w-px h-10 bg-zinc-800 hidden sm:block"></div>
+			<div class="hidden h-10 w-px bg-zinc-800 sm:block"></div>
 			<div class="flex flex-col items-center">
 				<span class="text-3xl font-bold text-white">98%</span>
-				<span class="text-xs text-zinc-500 uppercase tracking-widest mt-1">Satisfação</span>
+				<span class="mt-1 text-xs tracking-widest text-zinc-500 uppercase">Satisfação</span>
 			</div>
 		</div>
 
 		<!-- CTA Buttons -->
-		<div class="animate-fade-in-up delay-400 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+		<div
+			class="animate-fade-in-up flex w-full flex-col items-center justify-center gap-4 delay-400 sm:w-auto sm:flex-row"
+		>
 			<a
 				href="https://wa.me/5511994740471?text=Ol%C3%A1%20Gui%2C%20quero%20come%C3%A7ar%20minha%20transforma%C3%A7%C3%A3o!"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="btn-brand animate-pulse-glow text-base px-8 py-4 w-full sm:w-auto justify-center"
+				class="btn-brand animate-pulse-glow w-full justify-center px-8 py-4 text-base sm:w-auto"
 			>
 				<MessageCircle size={18} />
 				Falar no WhatsApp
 			</a>
-			<a href="#sobre" class="btn-outline text-base px-8 py-4 w-full sm:w-auto justify-center">
+			<a href="#sobre" class="btn-outline w-full justify-center px-8 py-4 text-base sm:w-auto">
 				<Dumbbell size={18} />
 				Começar agora
 				<ArrowRight size={16} />
@@ -85,5 +104,7 @@
 	</div>
 
 	<!-- Bottom gradient fade -->
-	<div class="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-zinc-950 to-transparent pointer-events-none"></div>
+	<div
+		class="pointer-events-none absolute right-0 bottom-0 left-0 h-32 bg-linear-to-t from-zinc-950 to-transparent"
+	></div>
 </section>
