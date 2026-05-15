@@ -4,9 +4,9 @@ const plans = [
 	{
 		icon: Zap,
 		name: 'Consultoria Online',
-		price: 'R$ 149.90',
+		price: 'R$ 200.00',
 		period: '/mês',
-		desc: 'Para quem quer treinar em qualquer lugar com orientação profissional.',
+		desc: 'Para quem quer treinar com orientação profissional a distância.',
 		featured: false,
 		cta: 'Começar agora',
 		perks: [
@@ -20,25 +20,24 @@ const plans = [
 	{
 		icon: Crown,
 		name: 'Plano Premium',
-		price: 'R$ 299.90',
+		price: 'R$ 450.00',
 		period: '/mês',
 		desc: 'Máxima evolução com suporte completo, presencial ou online.',
 		featured: true,
 		cta: 'Quero o Premium',
 		perks: [
-			'Acompanhamento presencial',
+			'Acompanhamento presencial 3x por semana',
 			'Treino 100% personalizado',
 			'Suporte WhatsApp 7 dias/semana',
 			'Avaliação física mensal',
 			'Orientação nutricional com nutricionista profissional',
-			'Vídeo-aula semanal ao vivo',
-			'Acesso a comunidade exclusiva'
+			'Acesso a comunidade exclusiva e plataforma de acompanhamento'
 		]
 	},
 	{
 		icon: MessageCircle,
 		name: 'Personal Presencial',
-		price: 'R$ 199.90',
+		price: 'R$ 300.00',
 		period: '/mês',
 		desc: 'Acompanhamento presencial na sua academia com atenção individual.',
 		featured: false,
@@ -46,9 +45,9 @@ const plans = [
 		perks: [
 			'Aulas presenciais 3x por semana',
 			'Treino personalizado',
-			'Correção postural e execução',
-			'Suporte via WhatsApp',
-			'Avaliação física bimestral'
+			'Suporte via WhatsApp 7 dias/semana',
+			'Avaliação física mensal',
+			'Acesso a plataforma de acompanhamento'
 		]
 	}
 ];
