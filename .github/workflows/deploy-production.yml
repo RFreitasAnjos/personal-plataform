@@ -1,0 +1,63 @@
+name: Deploy Production
+
+on:
+  push:
+    branches:
+      - main
+
+# Evita deploys simultâneos
+concurrency:
+  group: production-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Production Deploy
+
+    runs-on: ubuntu-latest
+
+    # Ambiente protegido
+    environment:
+      name: production
+
+    steps:
+      # -----------------------------------------------------
+      # Checkout do repositório
+      # -----------------------------------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # -----------------------------------------------------
+      # Setup Node
+      # -----------------------------------------------------
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # -----------------------------------------------------
+      # Instala dependências
+      # -----------------------------------------------------
+      - name: Install dependencies
+        run: npm ci
+
+      # -----------------------------------------------------
+      # Executa testes antes do deploy
+      # -----------------------------------------------------
+      - name: Run tests
+        run: npm run test
+
+      # -----------------------------------------------------
+      # Build de produção
+      # -----------------------------------------------------
+      - name: Build project
+        run: npm run build
+
+      # -----------------------------------------------------
+      # Deploy na Vercel
+      # -----------------------------------------------------
+      - name: Deploy to Vercel Production
+        run: |
+          npx vercel deploy --prod \
+          --token=${{ secrets.VERCEL_TOKEN }}
